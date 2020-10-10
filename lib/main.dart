@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         //  single  multiple
         body: SafeArea(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
                 //control+j to know what all can we set for it and ctrl+q in windows
@@ -41,59 +42,74 @@ class MyApp extends StatelessWidget {
                   fontSize: 20.0,
                   fontFamily: 'Source Sans Pro'),
             ),
+            SizedBox(
+              height: 20.0,
+              width: 150.0,
+              child: Divider(
+                color: Colors.teal[100],
+              ),
+            ),
             Card(
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.phone,
-                      // size: 100.0,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      '+91 8989898989',
-                      style: TextStyle(
-                          color: Colors.teal[900],
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 20.0),
-                    ),
-                  ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  // size: 100.0,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  '+91 8989898989',
+                  style: TextStyle(
+                      color: Colors.teal[900],
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20.0),
                 ),
               ),
             ),
             Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.email,
-                      color: Colors.teal,
+                //color: Colors.white, by default it is white
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'diitism@gmail.com',
+                    style: TextStyle(
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20.0,
+                      color: Colors.teal[900],
                     ),
-                    SizedBox(width: 10.0),
-                    Text(
-                      'diitism@gmail.com',
-                      style: TextStyle(
-                        fontFamily: 'Source Sans Pro',
-                        fontSize: 20.0,
-                        color: Colors.teal[900],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+                  ),
+                )),
           ],
         )),
       ),
     );
   }
 }
+
+//Use it to use ROW instead of ListTile
+
+//child: Padding(
+//padding: const EdgeInsets.all(10.0),
+// child: Row(
+//   children: <Widget>[
+//     Icon(
+//       Icons.phone,
+//       // size: 100.0,
+//       color: Colors.teal,
+//     ),
+//     SizedBox(
+//       width: 10.0,
+//     ),
+//     Text(
+//       '+91 8989898989',
+//       style: TextStyle(
+//           color: Colors.teal[900],
+//           fontFamily: 'Source Sans Pro',
+//           fontSize: 20.0),
+//     ),
+//   ],
+// ),
