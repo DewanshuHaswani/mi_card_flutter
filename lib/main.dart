@@ -19,63 +19,80 @@ class MyApp extends StatelessWidget {
         //     /     \
         //  single  multiple
         body: SafeArea(
-            //Container was wrapped around a container(alt+enter)
             child: Column(
-          //to limit what column takes in to size of widgets in it
-          // ->mainAxisSize: MainAxisSize.min,
-
-          //to start upside down:
-          // ->verticalDirection: VerticalDirection.up,
-
-          //mainAxisAlignment: MainAxisAlignment.center, // start is default
-          //space evenly
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //spaceBetween
-          //Cross access alignment
-          //-stretch to fill completely
-
-          //pushing all children to the right one way is to create invisible container with width: double.infinity
-          //and using cross access alignment as end
           children: <Widget>[
-            Container(
+            CircleAvatar(
+                //control+j to know what all can we set for it and ctrl+q in windows
+                radius: 50.0,
+                //backgroundColor: Colors.red,
+                backgroundImage: AssetImage('images/dewanshu.png')),
+            Text('Dewanshu H',
+                style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 40.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)),
+            Text(
+              'FLUTTER DEVELOPER',
+              style: TextStyle(
+                  color: Colors.teal[100],
+                  letterSpacing: 2.5,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                  fontFamily: 'Source Sans Pro'),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
               color: Colors.white,
-              child: Text("Container 1"),
-//container without child  tries to take whole space
-//and when an widget is given to it, it will shrink to the size of widget (children)
-
-//adjusting height and weight
-              height: 100.0,
-              width: 100.0,
-
-//margin property
-//for all side -> margin: EdgeInsets.all(20.0),
-//for top and bottom -> margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 10.0),
-// for only one side margin: EdgeInsets.only(left :30.0)
-              //    margin: EdgeInsets.fromLTRB(20.0, 10.0, 50.0, 60.0),
-
-// to set child position we will use padding (for the inside of the widget)
-              //    padding: EdgeInsets.all(20.0)
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.phone,
+                      // size: 100.0,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      '+91 8989898989',
+                      style: TextStyle(
+                          color: Colors.teal[900],
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20.0),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(
-              height: 20.0,
-            ), //to give spacing between  container
-            Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.blue,
-                child: Text("Container 2")),
-            Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.red,
-                child: Text("Container 3"))
+            Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(width: 10.0),
+                    Text(
+                      'diitism@gmail.com',
+                      style: TextStyle(
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20.0,
+                        color: Colors.teal[900],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
-        )
-            //container can have only single child
-
-            //Columns(V) and rows(H) can include multiple widgets
-
-            ),
+        )),
       ),
     );
   }
